@@ -8,28 +8,23 @@
 
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:Arial;
 background:black;
 color:gold;
 }
 
-/* HEADER */
 header{
 background:#111;
 padding:20px;
 text-align:center;
 font-size:26px;
 font-weight:bold;
-letter-spacing:3px;
 border-bottom:2px solid gold;
 }
 
 /* CATEGORY BUTTONS */
 .categories{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:10px;
+text-align:center;
 padding:15px;
 }
 
@@ -38,9 +33,9 @@ background:#111;
 color:gold;
 border:1px solid gold;
 padding:8px 15px;
+margin:5px;
 border-radius:20px;
 cursor:pointer;
-transition:0.3s;
 }
 
 .categories button:hover{
@@ -48,26 +43,20 @@ background:gold;
 color:black;
 }
 
-/* PRODUCTS */
+/* PRODUCTS GRID */
 .products{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
 gap:20px;
 padding:20px;
 }
 
 .card{
 background:#111;
-width:160px;
 padding:15px;
 border-radius:10px;
 border:1px solid gold;
-transition:0.3s;
-}
-
-.card:hover{
-transform:scale(1.05);
+text-align:center;
 }
 
 .card img{
@@ -76,7 +65,7 @@ border-radius:8px;
 }
 
 .price{
-margin:8px 0;
+margin:10px 0;
 font-weight:bold;
 }
 
@@ -87,7 +76,6 @@ color:black;
 padding:8px;
 text-decoration:none;
 border-radius:5px;
-font-size:14px;
 }
 
 footer{
@@ -95,7 +83,6 @@ background:#111;
 text-align:center;
 padding:15px;
 border-top:1px solid gold;
-margin-top:20px;
 }
 
 </style>
@@ -106,12 +93,10 @@ let cards=document.querySelectorAll(".card");
 cards.forEach(card=>{
 if(category=="all"){
 card.style.display="block";
-}
-else{
+}else{
 if(card.classList.contains(category)){
 card.style.display="block";
-}
-else{
+}else{
 card.style.display="none";
 }
 }
