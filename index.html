@@ -4,60 +4,74 @@
     <title>Neel Store</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #000;
+            color: gold;
             text-align: center;
         }
 
         header {
-            background-color: black;
-            color: white;
-            padding: 15px;
-            font-size: 22px;
+            background: linear-gradient(to right, black, #111);
+            color: gold;
+            padding: 18px;
+            font-size: 24px;
             font-weight: bold;
+            letter-spacing: 2px;
+            border-bottom: 2px solid gold;
         }
 
         .categories {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            padding: 20px;
+            gap: 20px;
+            padding: 30px;
         }
 
         .box {
-            background-color: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+            background-color: #111;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid gold;
             font-size: 18px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         .box:hover {
-            background-color: black;
-            color: white;
+            background-color: gold;
+            color: black;
+            transform: scale(1.05);
             cursor: pointer;
         }
 
         .shop-btn {
             display: inline-block;
-            margin: 20px;
-            padding: 12px 25px;
-            background-color: black;
-            color: white;
+            margin: 25px;
+            padding: 14px 30px;
+            background-color: gold;
+            color: black;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 6px;
             font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .shop-btn:hover {
+            background-color: #d4af37;
         }
 
         footer {
-            background-color: black;
-            color: white;
-            padding: 10px;
+            background-color: #111;
+            color: gold;
+            padding: 12px;
             font-size: 14px;
+            border-top: 1px solid gold;
         }
+
     </style>
 </head>
 
