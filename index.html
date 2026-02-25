@@ -1,103 +1,182 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Neel Store</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
+<title>Neel Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: gold;
-            text-align: center;
-        }
+<style>
 
-        header {
-            background: linear-gradient(to right, black, #111);
-            color: gold;
-            padding: 18px;
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            border-bottom: 2px solid gold;
-        }
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:black;
+color:gold;
+}
 
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            padding: 30px;
-        }
+/* HEADER */
+header{
+background:#111;
+padding:20px;
+text-align:center;
+font-size:26px;
+font-weight:bold;
+letter-spacing:3px;
+border-bottom:2px solid gold;
+}
 
-        .box {
-            background-color: #111;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid gold;
-            font-size: 18px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+/* CATEGORY BUTTONS */
+.categories{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+padding:15px;
+}
 
-        .box:hover {
-            background-color: gold;
-            color: black;
-            transform: scale(1.05);
-            cursor: pointer;
-        }
+.categories button{
+background:#111;
+color:gold;
+border:1px solid gold;
+padding:8px 15px;
+border-radius:20px;
+cursor:pointer;
+transition:0.3s;
+}
 
-        .shop-btn {
-            display: inline-block;
-            margin: 25px;
-            padding: 14px 30px;
-            background-color: gold;
-            color: black;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 16px;
-            transition: 0.3s;
-        }
+.categories button:hover{
+background:gold;
+color:black;
+}
 
-        .shop-btn:hover {
-            background-color: #d4af37;
-        }
+/* PRODUCTS */
+.products{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:20px;
+}
 
-        footer {
-            background-color: #111;
-            color: gold;
-            padding: 12px;
-            font-size: 14px;
-            border-top: 1px solid gold;
-        }
+.card{
+background:#111;
+width:160px;
+padding:15px;
+border-radius:10px;
+border:1px solid gold;
+transition:0.3s;
+}
 
-    </style>
+.card:hover{
+transform:scale(1.05);
+}
+
+.card img{
+width:100%;
+border-radius:8px;
+}
+
+.price{
+margin:8px 0;
+font-weight:bold;
+}
+
+.order-btn{
+display:block;
+background:gold;
+color:black;
+padding:8px;
+text-decoration:none;
+border-radius:5px;
+font-size:14px;
+}
+
+footer{
+background:#111;
+text-align:center;
+padding:15px;
+border-top:1px solid gold;
+margin-top:20px;
+}
+
+</style>
+
+<script>
+function filterCategory(category){
+let cards=document.querySelectorAll(".card");
+cards.forEach(card=>{
+if(category=="all"){
+card.style.display="block";
+}
+else{
+if(card.classList.contains(category)){
+card.style.display="block";
+}
+else{
+card.style.display="none";
+}
+}
+});
+}
+</script>
+
 </head>
 
 <body>
 
-<header>
-    NEEL STORE
-</header>
+<header>NEEL STORE</header>
 
 <div class="categories">
+<button onclick="filterCategory('all')">All</button>
+<button onclick="filterCategory('girls')">Girls</button>
+<button onclick="filterCategory('women')">Women</button>
+<button onclick="filterCategory('boys')">Boys</button>
+<button onclick="filterCategory('mens')">Mens</button>
+<button onclick="filterCategory('gift')">Gift</button>
+<button onclick="filterCategory('electronics')">Electronics</button>
+</div>
 
-    <div class="box">Girls</div>
-    <div class="box">Women</div>
-    <div class="box">Boys</div>
-    <div class="box">Mens</div>
-    <div class="box">Gift</div>
-    <div class="box">Electronics</div>
+<div class="products">
+
+<div class="card girls">
+<img src="https://via.placeholder.com/150">
+<div class="price">Girls Top ₹499</div>
+<a href="https://wa.me/917080747479" class="order-btn">Order on WhatsApp</a>
+</div>
+
+<div class="card women">
+<img src="https://via.placeholder.com/150">
+<div class="price">Women Kurti ₹799</div>
+<a href="https://wa.me/917080747479" class="order-btn">Order on WhatsApp</a>
+</div>
+
+<div class="card boys">
+<img src="https://via.placeholder.com/150">
+<div class="price">Boys T-shirt ₹399</div>
+<a href="https://wa.me/917080747479" class="order-btn">Order on WhatsApp</a>
+</div>
+
+<div class="card mens">
+<img src="https://via.placeholder.com/150">
+<div class="price">Mens Shirt ₹999</div>
+<a href="https://wa.me/917080747479" class="order-btn">Order on WhatsApp</a>
+</div>
+
+<div class="card gift">
+<img src="https://via.placeholder.com/150">
+<div class="price">Gift Item ₹599</div>
+<a href="https://wa.me/917080747479" class="order-btn">Order on WhatsApp</a>
+</div>
+
+<div class="card electronics">
+<img src="https://via.placeholder.com/150">
+<div class="price">Headphones ₹1299</div>
+<a href="https://wa.me/917080747479" class="order-btn">Order on WhatsApp</a>
+</div>
 
 </div>
 
-<a href="https://wa.me/917080747479" class="shop-btn">
-    Shop Now
-</a>
-
 <footer>
-    © 2026 Neel Store | All Rights Reserved
+© 2026 Neel Store | WhatsApp: 7080747479
 </footer>
 
 </body>
