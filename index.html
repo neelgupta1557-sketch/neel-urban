@@ -1,90 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Neel Store</title>
+<title>Neel Urban</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:black;
 color:gold;
 }
 
 header{
 background:#111;
-padding:20px;
+padding:15px;
 text-align:center;
-font-size:26px;
+font-size:22px;
 font-weight:bold;
 border-bottom:2px solid gold;
 }
 
-/* CATEGORY BUTTONS */
+/* CATEGORY BAR */
 .categories{
-text-align:center;
-padding:15px;
+display:flex;
+overflow-x:auto;
+gap:10px;
+padding:10px;
+background:#000;
 }
 
 .categories button{
 background:#111;
 color:gold;
 border:1px solid gold;
-padding:8px 15px;
-margin:5px;
+padding:6px 12px;
 border-radius:20px;
+white-space:nowrap;
 cursor:pointer;
 }
 
-.categories button:hover{
-background:gold;
-color:black;
-}
-
-/* PRODUCTS GRID */
+/* PRODUCTS */
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:20px;
-padding:20px;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+padding:10px;
 }
 
 .card{
 background:#111;
-padding:15px;
-border-radius:10px;
+padding:10px;
+border-radius:8px;
 border:1px solid gold;
-text-align:center;
+position:relative;
+}
+
+.image-container{
+position:relative;
 }
 
 .card img{
 width:100%;
-border-radius:8px;
+border-radius:6px;
 }
 
-.price{
-margin:10px 0;
+/* PRICE ON IMAGE */
+.price-tag{
+position:absolute;
+top:8px;
+left:8px;
+background:gold;
+color:black;
+padding:3px 8px;
+font-size:12px;
 font-weight:bold;
+border-radius:4px;
+}
+
+.title{
+font-size:14px;
+margin:8px 0;
 }
 
 .order-btn{
 display:block;
+text-align:center;
 background:gold;
 color:black;
-padding:8px;
+padding:6px;
 text-decoration:none;
 border-radius:5px;
+font-size:13px;
 }
 
 footer{
-background:#111;
 text-align:center;
-padding:15px;
+padding:10px;
+background:#111;
 border-top:1px solid gold;
+font-size:13px;
 }
-
 </style>
 
 <script>
@@ -108,7 +124,7 @@ card.style.display="none";
 
 <body>
 
-<header>NEEL STORE</header>
+<header>NEEL URBAN</header>
 
 <div class="categories">
 <button onclick="filterCategory('all')">All</button>
@@ -123,45 +139,36 @@ card.style.display="none";
 <div class="products">
 
 <div class="card girls">
-<img src="https://via.placeholder.com/150">
-<div class="price">Girls Top ₹499</div>
-<a href="https://wa.me/917080747479" class="order-btn">Order on WhatsApp</a>
+<div class="image-container">
+<img src="https://via.placeholder.com/200">
+<div class="price-tag">₹499</div>
+</div>
+<div class="title">Girls Top</div>
+<a href="https://wa.me/917080747479?text=I want to order Girls Top ₹499 from Neel Urban" class="order-btn">Order on WhatsApp</a>
 </div>
 
 <div class="card women">
-<img src="https://via.placeholder.com/150">
-<div class="price">Women Kurti ₹799</div>
-<a href="https://wa.me/917080747479" class="order-btn">Order on WhatsApp</a>
+<div class="image-container">
+<img src="https://via.placeholder.com/200">
+<div class="price-tag">₹799</div>
 </div>
-
-<div class="card boys">
-<img src="https://via.placeholder.com/150">
-<div class="price">Boys T-shirt ₹399</div>
-<a href="https://wa.me/917080747479" class="order-btn">Order on WhatsApp</a>
-</div>
-
-<div class="card mens">
-<img src="https://via.placeholder.com/150">
-<div class="price">Mens Shirt ₹999</div>
-<a href="https://wa.me/917080747479" class="order-btn">Order on WhatsApp</a>
-</div>
-
-<div class="card gift">
-<img src="https://via.placeholder.com/150">
-<div class="price">Gift Item ₹599</div>
-<a href="https://wa.me/917080747479" class="order-btn">Order on WhatsApp</a>
+<div class="title">Women Kurti</div>
+<a href="https://wa.me/917080747479?text=I want to order Women Kurti ₹799 from Neel Urban" class="order-btn">Order on WhatsApp</a>
 </div>
 
 <div class="card electronics">
-<img src="https://via.placeholder.com/150">
-<div class="price">Headphones ₹1299</div>
-<a href="https://wa.me/917080747479" class="order-btn">Order on WhatsApp</a>
+<div class="image-container">
+<img src="https://via.placeholder.com/200">
+<div class="price-tag">₹1299</div>
+</div>
+<div class="title">Headphones</div>
+<a href="https://wa.me/917080747479?text=I want to order Headphones ₹1299 from Neel Urban" class="order-btn">Order on WhatsApp</a>
 </div>
 
 </div>
 
 <footer>
-© 2026 Neel Store | WhatsApp: 7080747479
+© 2026 Neel Urban | WhatsApp: 7080747479
 </footer>
 
 </body>
