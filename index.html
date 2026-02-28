@@ -1,192 +1,222 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Neel Urban</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neel Urban | Official Store</title>
 
 <style>
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial, sans-serif;
-background:black;
-color:gold;
+}
+
+body{
+background:#0f0f0f;
+color:white;
 }
 
 header{
-background:#111;
+background:#000;
 padding:15px;
 text-align:center;
-font-size:22px;
+font-size:24px;
 font-weight:bold;
-border-bottom:2px solid gold;
+letter-spacing:3px;
 }
 
-/* CATEGORY BUTTONS */
-.categories{
+nav{
 display:flex;
-flex-wrap:wrap;
 justify-content:center;
-gap:8px;
+gap:20px;
 padding:10px;
-}
-
-.categories button{
 background:#111;
-color:gold;
-border:1px solid gold;
-padding:6px 12px;
-border-radius:20px;
-cursor:pointer;
 }
 
-.categories button:hover{
-background:gold;
-color:black;
+nav a{
+color:white;
+text-decoration:none;
+font-size:14px;
 }
 
-/* PRODUCTS */
+nav a:hover{
+color:#00ff88;
+}
+
+section{
+padding:30px 20px;
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+}
+
 .products{
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-padding:10px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
 }
 
 .card{
-background:#111;
-padding:10px;
-border-radius:8px;
-border:1px solid gold;
-text-align:center;
+background:#1b1b1b;
+border-radius:10px;
+overflow:hidden;
+transition:0.3s;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
+.card:hover{
+transform:scale(1.05);
 }
 
 .card img{
 width:100%;
-border-radius:6px;
+height:220px;
+object-fit:cover;
 }
 
-.title{
-font-size:14px;
-margin:6px 0;
+.card-content{
+padding:15px;
+text-align:center;
 }
 
 .price{
+color:#00ff88;
 font-weight:bold;
-margin-bottom:6px;
+margin:10px 0;
 }
 
-.order-btn{
-display:block;
-background:gold;
-color:black;
-padding:6px;
-text-decoration:none;
-border-radius:5px;
-font-size:13px;
+button{
+background:#00ff88;
+border:none;
+padding:10px 15px;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#00cc66;
+}
+
+.about, .contact{
+text-align:center;
+max-width:600px;
+margin:auto;
 }
 
 footer{
+background:#000;
 text-align:center;
-padding:10px;
-background:#111;
-border-top:1px solid gold;
-font-size:13px;
+padding:15px;
+margin-top:20px;
+font-size:14px;
 }
 </style>
-
-<script>
-function filterCategory(category){
-let cards=document.querySelectorAll(".card");
-cards.forEach(card=>{
-if(category=="all"){
-card.style.display="block";
-}else{
-if(card.classList.contains(category)){
-card.style.display="block";
-}else{
-card.style.display="none";
-}
-}
-});
-}
-</script>
-
 </head>
 
 <body>
 
 <header>NEEL URBAN</header>
 
-<div class="categories">
-<button onclick="filterCategory('all')">All</button>
-<button onclick="filterCategory('girls')">Girls</button>
-<button onclick="filterCategory('women')">Women</button>
-<button onclick="filterCategory('boys')">Boys</button>
-<button onclick="filterCategory('mens')">Mens</button>
-<button onclick="filterCategory('gift')">Gift</button>
-<button onclick="filterCategory('electronics')">Electronics</button>
-</div>
+<nav>
+<a href="#clothes">Clothes</a>
+<a href="#shoes">Shoes</a>
+<a href="#gadgets">Gadgets</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
 
+<!-- CLOTHES -->
+<section id="clothes">
+<h2>Clothes</h2>
 <div class="products">
 
-<div class="card girls">
-<img src="https://via.placeholder.com/200">
-<div class="title">Girls Top</div>
-<div class="price">₹499</div>
-<a href="https://wa.me/917080747479?text=I want to order Girls Top ₹499 from Neel Urban" class="order-btn">Order on WhatsApp</a>
-</div>
-
-<div class="card women">
-<img src="https://via.placeholder.com/200">
-<div class="title">Women Kurti</div>
-<div class="price">₹799</div>
-<a href="https://wa.me/917080747479?text=I want to order Women Kurti ₹799 from Neel Urban" class="order-btn">Order on WhatsApp</a>
-</div>
-
-<div class="card boys">
-<img src="https://via.placeholder.com/200">
-<div class="title">Boys T-Shirt</div>
+<div class="card">
+<img src="https://via.placeholder.com/300x300" alt="">
+<div class="card-content">
+<h3>Black Oversize T-Shirt</h3>
 <div class="price">₹399</div>
-<a href="https://wa.me/917080747479?text=I want to order Boys T-Shirt ₹399 from Neel Urban" class="order-btn">Order on WhatsApp</a>
+<a href="https://wa.me/917080747479?text=I want to order Black Oversize T-Shirt">
+<button>Order Now</button>
+</a>
+</div>
 </div>
 
-<div class="card mens">
-<img src="https://via.placeholder.com/200">
-<div class="title">Mens Shirt</div>
-<div class="price">₹999</div>
-<a href="https://wa.me/917080747479?text=I want to order Mens Shirt ₹999 from Neel Urban" class="order-btn">Order on WhatsApp</a>
+<div class="card">
+<img src="https://via.placeholder.com/300x300" alt="">
+<div class="card-content">
+<h3>White Printed Hoodie</h3>
+<div class="price">₹799</div>
+<a href="https://wa.me/917080747479?text=I want to order White Printed Hoodie">
+<button>Order Now</button>
+</a>
 </div>
-
-<div class="product-card">
-  <img src="IMG_20260221_134752.jpg" alt="Black Deer Men Cotton Blend Shirt Pant Set">
-  <h3>Black Deer Men Cotton Blend Shirt Pant Set</h3>
-  <p class="price">₹649</p>
-</div>
-
-<div class="card gift">
-<img src="https://via.placeholder.com/200">
-<div class="title">Gift Item</div>
-<div class="price">₹599</div>
-<a href="https://wa.me/917080747479?text=I want to order Gift Item ₹599 from Neel Urban" class="order-btn">Order on WhatsApp</a>
-</div>
-
-<div class="card electronics">
-<img src="https://via.placeholder.com/200">
-<div class="title">Headphones</div>
-<div class="price">₹1299</div>
-<a href="https://wa.me/917080747479?text=I want to order Headphones ₹1299 from Neel Urban" class="order-btn">Order on WhatsApp</a>
-</div>
-
-<div class="product-card">
-  <img src="ms_eduwd_512_409579287.jpg" alt="Hoppup Predator XO3">
-  <h3>Hoppup Predator XO3</h3>
-  <p class="price">₹709</p>
 </div>
 
 </div>
+</section>
+
+<!-- SHOES -->
+<section id="shoes">
+<h2>Shoes</h2>
+<div class="products">
+
+<div class="card">
+<img src="https://via.placeholder.com/300x300" alt="">
+<div class="card-content">
+<h3>Urban Sneakers</h3>
+<div class="price">₹899</div>
+<a href="https://wa.me/917080747479?text=I want to order Urban Sneakers">
+<button>Order Now</button>
+</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- GADGETS -->
+<section id="gadgets">
+<h2>Gadgets</h2>
+<div class="products">
+
+<div class="card">
+<img src="https://via.placeholder.com/300x300" alt="">
+<div class="card-content">
+<h3>Hoppup Predator XO3</h3>
+<div class="price">₹709</div>
+<a href="https://wa.me/917080747479?text=I want to order Hoppup Predator XO3">
+<button>Order Now</button>
+</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Us</h2>
+<div class="about">
+<p>Neel Urban is a modern fashion & gadget store providing quality products at affordable prices across India. Order easily via WhatsApp and get fast delivery.</p>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Us</h2>
+<div class="contact">
+<p>WhatsApp: 7080747479</p>
+<p>All India Delivery Available</p>
+</div>
+</section>
 
 <footer>
-© 2026 Neel Urban | WhatsApp: 7080747479
+© 2026 Neel Urban | All Rights Reserved
 </footer>
 
 </body>
