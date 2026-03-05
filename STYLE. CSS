@@ -1,0 +1,27 @@
+<style>
+body {
+  background: black;
+}
+
+.product-card {
+  background: #111;
+  color: gold;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px gold;
+}
+
+.product-card img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+</style>
