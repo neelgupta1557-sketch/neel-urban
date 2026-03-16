@@ -131,6 +131,11 @@ font-size:14px;
 <a href="#contact">Contact</a>
 </nav>
 
+<div style="text-align:center;padding:15px;background:#111;">
+<input type="text" id="searchBar" placeholder="Search products..." 
+style="padding:10px;width:80%;max-width:400px;border-radius:8px;border:none;font-size:16px;">
+</div>
+
 <!-- CLOTHES -->
 <section id="clothes">
 <h2>Clothes</h2>
@@ -586,6 +591,23 @@ font-size:14px;
 <footer>
 © 2026 Neel Urban | All Rights Reserved
 </footer>
+
+<script>
+document.getElementById("searchBar").addEventListener("keyup", function() {
+let input = this.value.toLowerCase();
+let cards = document.getElementsByClassName("card");
+
+for (let i = 0; i < cards.length; i++) {
+let title = cards[i].getElementsByTagName("h3")[0];
+
+if (title.innerHTML.toLowerCase().indexOf(input) > -1) {
+cards[i].style.display = "";
+} else {
+cards[i].style.display = "none";
+}
+}
+});
+</script>
 
 </body>
 </html>
